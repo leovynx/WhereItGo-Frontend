@@ -1,0 +1,46 @@
+.settings-container {
+  min-height: 100vh;
+  background-color: #0f131b;
+  padding: 24px;
+  color: #b8bcc3;
+}
+
+.settings-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.settings-card {
+  background-color: #27262a;
+  border: 1px solid #383b42;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.setting-item:hover {
+  background-color: #383b42;
+}
+
+.setting-item h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.setting-item p {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.setting-item span {
+  font-size: 24px;
+}

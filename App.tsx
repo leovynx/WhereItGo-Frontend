@@ -1,45 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from 'react';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import Login from './src/screen/Login/LoginScreen';
+// import Home from './src/screen/Home/Home';
+// import Settings from './src/screen/Settings/Settings';
+// import Profile from './src/screen/Profile/Profile';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+const App: React.FC = () => {
+  const [page, setPage] = useState('login');
 
-  return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
+  if (page === 'login') {
+    return <Login onLogin={() => setPage('home')} />;
+  }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+  return <Login onLogin={() => setPage('home')} />;
+  // if (page === 'home') {
+  //   return <Home openSettings={() => setPage('settings')} />;
+  // }
 
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
+  // if (page === 'settings') {
+  //   return <Settings openProfile={() => setPage('profile')} />;
+  // }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+  // return <Profile />;
+};
 
 export default App;
